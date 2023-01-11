@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
 
 
-function NavItem({ href, children}) {
-    return (
-        <li><a href={href}>{children}</a></li>
-    )
-}
+const NavItem = ({ href, children }) => {
 
-export default NavItem
+  return (
+    <li className="nav-item">
+      <Link className="nav-link" to={href}>
+        {children}
+      </Link>
+    </li>
+  );
+};
+
+export default NavItem;
