@@ -14,7 +14,6 @@ function ItemDetailContainer() {
     getProduct(params.itemid)
       .then((respuesta) => {
         setProduct(respuesta);
-        /* console.log("respuesta", respuesta) */
       })  
       .catch((error) => alert(error));
 

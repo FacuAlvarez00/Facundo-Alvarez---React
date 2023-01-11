@@ -22,7 +22,7 @@ function Item(props) {
 
       </div>
       <Link to={`/detail/${id}`}>
-      <Button padding="22px" color="purple">
+      <Button padding="10px" color="brown">
         Ver más
       </Button>
       </Link>

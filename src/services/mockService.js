@@ -2,20 +2,20 @@
 const productos = [
   {
       "id": 1,
-      "nombre": "Papa te amo",
+      "nombre": "El mejor papa",
       "cantidad": 1,
       "desc": "Lorem ipsum dolor sit amet consectetur",
       "precio": 1200,
-      "category": "Cuadro",
-      "img": "/1.png"
+      "category": "Bandeja",
+      "img": "/1.jpg"
   },
   {
       "id": 2,
-      "nombre": "Super mama",
+      "nombre": "Juntos a la par",
       "cantidad": 1,
       "desc": "Lorem ipsum dolor sit amet consectetur",
       "precio": 1800,
-      "category": "Cuadro",
+      "category": "Bandeja",
       "img": "/2.jpg"
   },
   {
@@ -47,11 +47,11 @@ const productos = [
   },
   {
       "id": 6,
-      "nombre": "Abuelos",
+      "nombre": "Super mama",
       "cantidad": 1,
       "desc": "Lorem ipsum dolor sit amet consectetur",
       "precio": 3500,
-      "category": "Cuadro",
+      "category": "Bandeja",
       "img": "/6.jpg"
   }
 ]
@@ -61,8 +61,7 @@ const obtenerProductos = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(productos);
-      console.log("test1", productos)
-    }, 2000);
+    }, 500);
   });
 };
 
@@ -74,23 +73,25 @@ const getProduct = (id) => {
     setTimeout(() => {
       if (prod){
         resolve(prod);
-        console.log("test2", prod)
       }
       else{
-        reject("ERROR")
+        reject("ERROR (el producto que buscaste no existe)")
       }
-    }, 2000);
+    }, 500);
   });
 }
 
 const getProductByType = (categoryURL) => {
   return new Promise((resolve, reject) => {
     let reqItems = productos.filter((item) => item.category === categoryURL);
-
     setTimeout(() => {
-      resolve(reqItems);
-      console.log("test1",reqItems)
-    }, 2000);
+      if (reqItems){
+        resolve(reqItems);
+      }
+      else{
+        reject("ERROR (la categoria filtrada no existe)")
+      }
+    }, 500);
   });
 };
 
