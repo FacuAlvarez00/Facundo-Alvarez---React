@@ -1,15 +1,18 @@
 import { useContext } from "react"
 import { cartContext } from "../../storage/cartContext"
+import ItemCounter from "../ItemCounter/ItemCounter"
+import Button from "../Button/Button"
 
 
 
 import "./cartitem.css"
 
 import React from 'react'
+import ItemCounterCart from "../ItemCounter/ItemCounterCart"
 
 const CartItem = (props) => {
 
-    const {removeFromCart, xd} = useContext(cartContext)
+    const {onAddToCart, count} = useContext(cartContext)
 
 
 
@@ -35,17 +38,10 @@ const CartItem = (props) => {
                 </div>
 
 
-         
-                <button onClick={() => removeFromCart(props.id)}>Remove</button>
+                <ItemCounter/>
+
+                <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>
             
-           
-           
-     
-        
-
-                
-               
-
 
 
             </div>

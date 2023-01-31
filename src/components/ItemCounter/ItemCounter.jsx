@@ -34,9 +34,9 @@ function ItemCounter({onAddToCart}){
             <span>{count}</span>
             <button disabled={count >= 8} onClick={incrementCount}>+</button>
 
-            <div>
-                <Button click={() => onAddToCart(count)}>Agregar al carrito</Button>
-            </div>
+           {/*  <div>
+                <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>
+            </div> */}
 
         </div>
     )

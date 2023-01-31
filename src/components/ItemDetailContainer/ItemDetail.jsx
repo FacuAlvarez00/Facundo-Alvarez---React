@@ -4,8 +4,15 @@ import Button from "../Button/Button";
 import "./cardDetail.css";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { cartContext } from "../../storage/cartContext";
+
+
+
 
 function ItemDetail({ nombre, img, price, desc, onAddToCart, isInCart }) {
+
+  const {count} = useContext(cartContext)
 
 
   return (
@@ -25,6 +32,7 @@ function ItemDetail({ nombre, img, price, desc, onAddToCart, isInCart }) {
         <h3 className="item-card_cost">$ {price}</h3>
         <small>{desc}</small>
         <div className="button_wrapper">
+          <div>{count}</div>
 
 
 
@@ -38,9 +46,11 @@ function ItemDetail({ nombre, img, price, desc, onAddToCart, isInCart }) {
 
 
           ) : (
-            <ItemCounter onAddToCart={onAddToCart} />
-
-
+            <>
+               <ItemCounter onAddToCart={onAddToCart} />
+              <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>
+            </>
+         
           )}
 
 
