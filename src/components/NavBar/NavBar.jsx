@@ -12,9 +12,9 @@ function NavBar() {
           <NavItem href="/">DECOLASER</NavItem>
           <Link to="/category/Portaretrato">Portaretratos</Link>
           <Link to="/category/Bandeja">Bandejas</Link>
-          <NavItem href="/carrito">
-          <CartWidget/>
-        </NavItem>
+          <Link to="/carrito">
+            <CartWidget/>
+          </Link>
 
         </div>
 
