@@ -43,9 +43,6 @@ function ItemDetailContainer() {
       img={product.img}
       desc={product.desc}
       price={product.precio}
-
-     
-    
     />
   );
 }

@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { cartContext } from "../../storage/cartContext"
+import Button from "../Button/Button"
 import CartItem from "./CartItem"
 import React from 'react'
 
@@ -7,13 +8,6 @@ import React from 'react'
 const Cart = () => {
  const {cart, precioTotal} = useContext(cartContext)
 
-
-
-
-
-
-
- 
   return (
     <>
     <div>
@@ -31,8 +25,22 @@ const Cart = () => {
         })}
     </div>
     <div>
-      <span>TOTAL ${precioTotal}</span>
+      
     </div>
+{/*     { cart.length <= 0 ? (
+    <p>Tu carrito esta vacio</p> 
+    ) : (
+      <>
+
+      <span>TOTAL ${precioTotal}</span>
+      <button disabled={cart.length = 0}>
+      Comprar
+    </button>
+      </>
+      
+    )
+    } */}
+   
 
 
     </>

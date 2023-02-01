@@ -8,9 +8,6 @@ import Button from "../Button/Button"
 
 function ItemCounter({onAddToCart}){
 
-
-
-
     const[count, setCount] = useState(1)
 
 
@@ -34,10 +31,9 @@ function ItemCounter({onAddToCart}){
             <span>{count}</span>
             <button disabled={count >= 8} onClick={incrementCount}>+</button>
 
-           {/*  <div>
-                <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>
-            </div> */}
-
+            <div>
+               {<Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>}
+            </div>
         </div>
     )
 }

@@ -27,7 +27,6 @@ function CartProvider(props){
         let copyCart = [...cart]
 
         if (alreadyInCart){
-            /* console.log("ya se encuentra en el carrito") */
             setCart(copyCart.map((currentItem) => currentItem.id === item.id ?
             {...alreadyInCart, count: alreadyInCart.count + item.count}: currentItem)
             )}
@@ -45,8 +44,10 @@ function cartTotal() {
     } else {
         let total = cart.reduce((acc, el) => acc + el.precio * el.count, 0);
         setPrecioTotal(total);
+        
     }
 }
+
 
 
 
@@ -67,36 +68,6 @@ function removeFromCart(itemId){
     )
 
 
-/*     function addToCart(item){
-        let alreadyInCart = cart.find(cartItem => cartItem.id === item.id)
-        let copyCart = [...cart]
-    
-        if (alreadyInCart){
-            console.log("ya se encuentra en el carrito")
-            setCart(copyCart.map((cartItem) => cartItem.id === alreadyInCart.id ?
-            {...alreadyInCart, count: alreadyInCart.count + item.count}: cartItem)
-            )}
-        else{
-            item.count = item.count || 1;
-            copyCart.push(item)
-            setCart(copyCart)
-        }
-        console.log(item.count)
-    }
-     */
-
-
-        /* function cartTotal() {
-        if (cart.length <= 0){
-            console.log("carrito vacio")
-        }
-        else{
-            let precio_total = cart.reduce((acc, el) => acc + el.precio * el.count, 0)
-            return `${precio_total}`;
-        }
-        console.log(cart.length)
-    }
- */
 
   
 }

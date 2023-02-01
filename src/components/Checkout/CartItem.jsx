@@ -1,18 +1,27 @@
 import { useContext } from "react"
 import { cartContext } from "../../storage/cartContext"
-import ItemCounter from "../ItemCounter/ItemCounter"
-import Button from "../Button/Button"
-
-
-
 import "./cartitem.css"
-
 import React from 'react'
-import ItemCounterCart from "../ItemCounter/ItemCounterCart"
+import CartItemCounter from "./CartItemCounter"
+import { useState } from "react"
+
+
 
 const CartItem = (props) => {
 
-    const {onAddToCart, count} = useContext(cartContext)
+    const {removeFromCart, cart} = useContext(cartContext)
+    const[count, setCount] = useState(1)
+   
+
+
+
+    function incrementCount(){
+        setCount(count + 1)
+        }
+
+    function decrementCount(){
+        setCount(count - 1) 
+        }
 
 
 
@@ -37,24 +46,22 @@ const CartItem = (props) => {
 
                 </div>
 
+                <div>
+                    <button onClick={decrementCount}>-</button>
+                    <span>{count}</span>
+                    <button disabled={count >= 8} onClick={incrementCount}>+</button>
+                </div>
 
-                <ItemCounter/>
+        
 
-                <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>
-            
-
-
+                <div>
+                    <span onClick={() => removeFromCart(props.id)} className="remove_item">X</span> 
+                </div> 
             </div>
+
+            
         </div>
-
-
-
     )
 }
-
 export default CartItem
 
-
-{/*       <div>
-                <span onClick={() => removeFromCart(item.id)} className="remove_item">X</span>
-            </div> */}
