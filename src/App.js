@@ -6,12 +6,13 @@ import Error404 from "./components/Error404/Error404";
 import HomePage from "./components/HomePage/HomePage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { CartProvider } from "./storage/cartContext";
-import Cart from "./components/Checkout/Cart";
-
-
+import Cart from "./components/Cart/Cart";
 
 function App() {
+
+
   return (
+    
     <>
     <CartProvider>
 

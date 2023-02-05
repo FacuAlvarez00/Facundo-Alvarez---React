@@ -1,39 +1,35 @@
 import { useState } from "react"
 import Button from "../Button/Button"
-
-
-
-
+import ItemCounterCart from "./ItemCounterCart"
 
 
 function ItemCounter({onAddToCart}){
 
-    const[count, setCount] = useState(1)
+    const[amount, setAmount] = useState(1)
 
-
-    
 
     function incrementCount(){
-        setCount(count + 1)
+        setAmount(amount + 1)
         }
 
     function decrementCount(){
-        setCount(count - 1) 
+        setAmount(amount - 1) 
         }
 
-
-    
 
     return(
         <div>
             <p>Agrega la cantidad que deseas</p>
-            <button disabled={count <= 1} onClick={decrementCount}>-</button>
-            <span>{count}</span>
-            <button disabled={count >= 8} onClick={incrementCount}>+</button>
+            <ItemCounterCart
+                    amount={amount}
+                    incrementCount={incrementCount}
+                    decrementCount={decrementCount}
+            />
 
             <div>
-               {<Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button>}
+                <Button onClick={() => onAddToCart(amount)}>Agregar al carrito</Button>
             </div>
+
         </div>
     )
 }

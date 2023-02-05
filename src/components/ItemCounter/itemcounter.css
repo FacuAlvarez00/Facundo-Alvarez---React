@@ -1,0 +1,33 @@
+.itemCounter_container{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+
+
+.amount-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .amount-style {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+  .button-counter {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}

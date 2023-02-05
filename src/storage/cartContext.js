@@ -7,7 +7,6 @@ export const cartContext = createContext({ cart: []})
 
 function CartProvider(props){
     const [cart, setCart] = useState([])
-    
     const [precioTotal, setPrecioTotal] = useState(0);
 
     useEffect(() =>{
@@ -48,21 +47,20 @@ function cartTotal() {
     }
 }
 
+const totalItems = cart.reduce((acc, el) => acc + el.count, 0)
+
 
 
 
 function removeFromCart(itemId){
     setCart(cart.filter(item => item.id !== itemId));
     cartTotal();
-
-
 }
 
 
 
-
     return (
-        <cartContext.Provider value={{cart, addToCart, test, precioTotal, removeFromCart }}>
+        <cartContext.Provider value={{cart, addToCart, test, precioTotal, removeFromCart, setCart, totalItems }}>
             {props.children}
         </cartContext.Provider>
     )

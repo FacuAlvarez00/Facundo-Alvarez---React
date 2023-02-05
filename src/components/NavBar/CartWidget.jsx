@@ -5,19 +5,46 @@ import { cartContext } from '../../storage/cartContext'
 
 function CartWidget(){
 
-    const contexto = useContext(cartContext)
+    const {totalItems, cart} = useContext(cartContext)
+
+
+    
     
     return (
-        <>  
+       /*  <>  
             <div className="icon_container">
                 <span>
                     <FontAwesomeIcon className="cartWidget_icon" icon={faCartShopping}/>
                 </span>
             </div>
             <div className="cartWidget_number">
-                <span>{contexto.cart.length}</span>
+                <span>{totalItems}</span>
             </div>
         </>
+ */
+    <>  
+        {
+            cart.length <= 0 ? (
+                <span>
+                
+            <FontAwesomeIcon className="cartWidget_icon" icon={faCartShopping}/>
+        </span>  
+        ) 
+            : 
+            ( <>
+            <div className="cartWidget_number"></div>   
+            <div className="icon_container">
+            <span>
+                <FontAwesomeIcon className="cartWidget_icon" icon={faCartShopping}/>
+            </span>
+            </div>
+            <div className="cartWidget_number">
+            <span>{totalItems}</span>
+            </div>
+            </> )
+            }
+       
+    </>
     )
 }
 

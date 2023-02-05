@@ -13,10 +13,6 @@ import { cartContext } from "../../storage/cartContext";
 function ItemDetail({ nombre, img, price, desc, onAddToCart, isInCart }) {
 
 
-  const {count, AddToCart} = useContext(cartContext)
-  
-
-
 
   return (
 
@@ -51,9 +47,9 @@ function ItemDetail({ nombre, img, price, desc, onAddToCart, isInCart }) {
           ) : (
             <>
               <ItemCounter onAddToCart={onAddToCart} />
-              {/* <Button onAdd={() => onAddToCart(count)}>Agregar al carrito</Button> */}
             </>
           )}
+          
 
 
         </div>

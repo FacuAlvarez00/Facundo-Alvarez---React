@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Item from "./Item";
 import Flex from "../Flex/Flex";
-import obtenerProductos, { getProductByType } from "../../services/mockService";
+import { getProducts, getProductByType } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function ItemListContainer() {
 
   useEffect(() => {
     if (!categoryid) {
-      obtenerProductos()
+      getProducts()
         .then((respuesta) => {
           setProducts(respuesta);
         })
@@ -27,8 +27,6 @@ function ItemListContainer() {
 
   return (
 
-  
-    
     <Flex>
       {products.map((itemIterado) => <Item key={itemIterado.id} item={itemIterado}/>
       )}

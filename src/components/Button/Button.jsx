@@ -10,7 +10,7 @@ export default function Button(props) {
 
 
   return (
-    <button onClick={props.onAdd} className={styles.btn}>
+    <button onClick={props.onClick} className={styles.btn}>
       {props.children}
     </button>
   );

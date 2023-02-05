@@ -6,8 +6,8 @@ import Button from '../Button/Button'
 
 
 function CartItemCounter() {
-    const[count, setCount] = useState(1)
-    const {removeFromCart, cart} = useContext(cartContext)
+    const[count, setCount] = useState()
+  
 
 
 
