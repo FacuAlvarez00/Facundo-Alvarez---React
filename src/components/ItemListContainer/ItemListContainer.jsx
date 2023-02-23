@@ -10,6 +10,8 @@ function ItemListContainer() {
   const [products, setProducts] = useState([]);
   let { categoryid } = useParams();
 
+  console.log("categoryid", categoryid)
+
   useEffect(() => {
     if (!categoryid) {
       getProducts()

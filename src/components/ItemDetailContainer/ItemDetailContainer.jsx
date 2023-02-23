@@ -23,18 +23,16 @@ function ItemDetailContainer() {
     getProduct(params.itemid)
       .then((respuesta) => {
         setProduct(respuesta);
+        console.log("producto", respuesta)
       })  
       .catch((error) => alert(error));
+      
 
   }, []);
 
 
 
-
-
   return (
-
-
     <ItemDetail
       isInCart={isInCart}
       onAddToCart={handleAddToCart}

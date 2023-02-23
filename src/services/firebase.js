@@ -56,7 +56,7 @@ export async function createOrder(order) {
     console.log(respuesta, respuesta.id);
   
     return respuesta.id;
-  }
+}
 
 
 export async function exportProducts(){
